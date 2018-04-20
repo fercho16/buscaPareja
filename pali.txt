@@ -1,0 +1,36 @@
+    def compara(self):
+        list = []
+        c = 0
+        while c < self.n:
+            list.append(raw_input("Dame una palabra:"))
+            c = c + 1
+        print list
+        c = 0
+        while c < list.__len__():
+            palabra = list[c]
+            inc = 0
+            dec = len(palabra) - 1
+            ban = False
+            for x in range(len(palabra)):
+                if palabra[inc] == palabra[dec]:
+                    ban = True
+                else:
+                    ban = False
+                inc = inc + 1
+                dec = dec - 1
+            if ban == True:
+                veces = 0;
+                i = c
+                while i < list.__len__():
+                    if palabra == list[i]:
+                        veces = veces + 1
+                    i = i + 1
+                print palabra, " es un palindromo y se encuentra ", veces, " veces"
+                c = c - 1
+                for x in range(veces):
+                    list.remove(palabra)
+
+            else:
+                print palabra, " no es un palindromo"
+            c = c + 1
+        print "\n\n"
